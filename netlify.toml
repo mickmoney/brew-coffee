@@ -1,0 +1,56 @@
+# Netlify settings for the Brew Coffee House site (www.brewbz.com)
+# Plain static site: no build step. Netlify publishes the repository root.
+
+[build]
+  publish = "."
+
+# ── Browser caching ─────────────────────────────────────────────────────────────
+# File names are not versioned (e.g. images/menu-drinks.webp is overwritten when the
+# menu changes), so caches are moderate rather than "forever". After a cache expires,
+# browsers check with Netlify and re-download only if the file changed.
+# stale-while-revalidate shows the cached copy instantly while checking in the background.
+# HTML pages keep Netlify's default (always checked), so page edits appear immediately.
+
+# Photos and menu images: 7 days
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+# 3D latte model: 7 days, served with the correct file type
+[[headers]]
+  for = "/models/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+    Content-Type = "model/gltf-binary"
+
+# 3D viewer script: 1 day (shorter, so motion tweaks reach visitors quickly)
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=86400"
+
+# Favicons and app icons: 7 days
+[[headers]]
+  for = "/favicon.*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/manifest+json"
+
+# ── Basic security headers (all pages) ──────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
