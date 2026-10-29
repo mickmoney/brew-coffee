@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR5Z9ZGGLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HR5Z9ZGGLZ');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brew Coffee House | Coffee in Ladyville and Belize City</title>
+<meta name="description" content="Brew Coffee House serves specialty coffee, cold drinks and fresh bites at two locations in Belize: Ladyville and Paradise Point in Belize City. Open Monday to Saturday, 8 am to 6 pm.">
+<meta name="theme-color" content="#1A1A1A">
+<!-- Favicons: the B from the Brew logo -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="canonical" href="https://www.brewbz.com/">
+
+<!-- Open Graph: how the link looks when shared on WhatsApp / Facebook. TODO: add og:image (1200x630 JPG) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brew Coffee House | Ladyville and Belize City">
+<meta property="og:description" content="Specialty coffee and fresh bites in Ladyville and at Paradise Point, Belize City.">
+<!-- <meta property="og:image" content="https://www.brewbz.com/images/og-image.jpg"> -->
+<meta property="og:url" content="https://www.brewbz.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Structured data: helps Google, Bing and AI assistants read locations, hours and contact details.
+     TODO: confirm phone numbers and hours before launch. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.brewbz.com/#brew",
+      "url": "https://www.brewbz.com/",
+      "name": "Brew Coffee House",
+      "slogan": "Leaving people happier than we found them.",
+      "email": "brewbelize@gmail.com",
+      "foundingDate": "2020",
+      "sameAs": [
+        "https://www.instagram.com/brew.bz/",
+        "https://www.facebook.com/brewcoffeebz/",
+        "https://www.tiktok.com/@brewcoffeebz",
+        "https://www.tripadvisor.com/Restaurant_Review-g291968-d34069537-Reviews-Brew_Coffee_House_at_Paradise_Point-Belize_City_Belize_District.html"
+      ]
+    },
+    {
+      "@type": "CafeOrCoffeeShop",
+      "name": "Brew Coffee House Ladyville",
+      "parentOrganization": {"@id": "https://www.brewbz.com/#brew"},
+      "url": "https://www.brewbz.com/",
+      "telephone": "+501-615-1882",
+      "servesCuisine": ["Coffee", "Breakfast", "Sandwiches"],
+      "priceRange": "BZ$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 3, Teichroeb Building, Mile 10 Philip Goldson Highway",
+        "addressLocality": "Ladyville",
+        "addressRegion": "Belize District",
+        "addressCountry": "BZ"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00", "closes": "18:00"
+      }]
+    },
+    {
+      "@type": "CafeOrCoffeeShop",
+      "name": "Brew Coffee House at Paradise Point",
+      "parentOrganization": {"@id": "https://www.brewbz.com/#brew"},
+      "url": "https://www.brewbz.com/",
+      "telephone": "+501-615-1221",
+      "servesCuisine": ["Coffee", "Breakfast", "Sandwiches"],
+      "priceRange": "BZ$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Corner of Hudson Street and Marine Parade Boulevard",
+        "addressLocality": "Belize City",
+        "addressRegion": "Belize District",
+        "addressCountry": "BZ"
+      },
+      "geo": {"@type": "GeoCoordinates", "latitude": 17.49952, "longitude": -88.19756},
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00", "closes": "18:00"
+      }]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ---------- Brand tokens ---------- */
+:root{
+  --espresso:#1A1A1A;
+  --iron:#232323;
+  --charcoal:#333333;
+  --concrete:#8E8780;
+  --bone:#EEEAE3;
+  --brass:#B8895A;
+  --walnut:#6B4A33;
+  --forest:#2F4F3A;
+  --orange:#E8822F;        /* fall CTA */
+  --orange-hover:#F0913F;
+  --ph-dark:#2B2A28;
+  --ph-light:#D9D3CA;
+
+  --font:"Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --wrap:1200px;
+  --gutter:clamp(22px, 5vw, 48px);
+  --edge:max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+  --header-h:64px;
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top, 0px);
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + env(safe-area-inset-top, 0px))}
+body{margin:0;background:var(--espresso);color:var(--charcoal);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font);font-weight:700;line-height:1.12;letter-spacing:-.02em;margin:0}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.section{padding:clamp(80px, 12vw, 144px) 0}
+.dark{background:var(--espresso);color:#cfc8be}
+.dark h2,.dark h3{color:#fff}
+.light{background:var(--bone);color:var(--charcoal)}
+.light h2,.light h3{color:var(--espresso)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* Section heading: thin label + bold headline, centered */
+.head{text-align:center;max-width:44rem;margin:0 auto clamp(44px, 6vw, 72px)}
+.label{display:block;font-weight:300;font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;margin-bottom:18px;color:var(--concrete)}
+.light .label{color:#7a7168}
+.head h2{font-size:clamp(2rem, 5.6vw, 3.4rem)}
+.head p{margin:18px auto 0;max-width:34rem;font-size:1.02rem}
+
+/* Image placeholders: replace each .ph with an <img class="ph" ...> */
+.ph{position:relative;display:block;width:100%;height:100%;background:var(--ph-dark);color:#77706a;font-size:.72rem;letter-spacing:.06em;object-fit:cover}
+div.ph::after{content:attr(data-label);position:absolute;left:16px;bottom:14px;right:16px}
+.light .ph{background:var(--ph-light);color:#8a8177}
+
+/* ---------- Buttons ---------- */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:0;font-family:var(--font);font-weight:600;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s, color .2s, border-color .2s}
+.btn svg{width:17px;height:17px;flex:none}
+.btn--white{background:#fff;color:var(--espresso)}
+.btn--white:hover{background:var(--bone)}
+.btn--line{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
+.btn--line:hover{border-color:#fff}
+.btn--black{background:var(--espresso);color:#fff}
+.btn--black:hover{background:var(--charcoal)}
+.btn--line-dark{border-color:rgba(26,26,26,.35);color:var(--espresso);background:transparent}
+.btn--line-dark:hover{border-color:var(--espresso)}
+/* Orange shimmer CTA */
+.btn--orange{background:var(--orange);color:var(--espresso);font-weight:700;min-height:56px;padding:0 34px}
+.btn--orange:hover{background:var(--orange-hover)}
+.btn--orange::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);transform:skewX(-20deg);animation:shimmer 3.2s ease-in-out 1s infinite}
+@keyframes shimmer{0%{left:-60%}45%,100%{left:130%}}
+.textlink{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:4px}
+
+/* ---------- Header: logo appears once the hero logo scrolls away ---------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;color:#fff;padding-top:env(safe-area-inset-top, 0px);transition:background .3s, border-color .3s;border-bottom:1px solid transparent}
+.site-header.is-solid{background:rgba(26,26,26,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom-color:rgba(255,255,255,.06)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
+.logo{display:block;color:#fff}
+.logo svg{display:block;width:92px;height:auto;fill:currentColor}
+.site-header .logo{opacity:0;visibility:hidden;transition:opacity .3s, visibility .3s}
+.site-header.is-solid .logo{opacity:1;visibility:visible}
+.nav-toggle{display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin-right:-12px;background:none;border:0;color:#fff;cursor:pointer}
+.nav-toggle svg{width:26px;height:26px}
+.nav{position:fixed;left:0;right:0;top:calc(var(--header-h) + env(safe-area-inset-top, 0px));height:calc(100dvh - var(--header-h) - env(safe-area-inset-top, 0px));background:var(--espresso);padding:24px var(--gutter) calc(32px + env(safe-area-inset-bottom, 0px));display:none;flex-direction:column}
+.nav.is-open{display:flex}
+.nav ul{list-style:none;margin:0;padding:0}
+.nav a{display:block;padding:12px 0;color:#fff;text-decoration:none;font-weight:700;font-size:2rem;letter-spacing:-.01em}
+.nav .btn{margin-top:auto}
+@media (min-width:900px){
+  .nav-toggle{display:none}
+  .nav{position:static;display:flex;flex-direction:row;align-items:center;gap:36px;height:auto;padding:0;background:none}
+  .nav ul{display:flex;gap:32px}
+  .nav a{padding:6px 0;font-weight:500;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#cfc8be}
+  .nav a:hover{color:#fff}
+  .nav .btn{margin:0;min-height:42px;padding:0 22px}
+}
+
+/* ---------- Hero (above the fold) ---------- */
+.hero{position:relative;overflow:hidden;background:var(--espresso);min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--header-h) + 24px) var(--gutter) clamp(150px, 24vh, 240px)}
+.hero-logo{display:block;width:min(300px, 66vw);margin:0 auto clamp(36px, 6vh, 56px);color:#fff}
+.hero-logo svg{display:block;width:100%;height:auto;fill:currentColor}
+.hero h1{color:#fff;font-size:clamp(2rem, 6.4vw, 3.8rem);max-width:16ch;margin:0 auto}
+.hero .sub{color:var(--concrete);font-weight:300;font-size:clamp(.95rem, 2.2vw, 1.15rem);letter-spacing:.04em;margin:16px 0 36px}
+.beans{position:absolute;left:0;right:0;bottom:0;height:clamp(140px, 22vh, 230px);pointer-events:none}
+.beans svg{width:100%;height:100%;display:block}
+.beans use{fill:var(--bean)}
+
+/* ---------- Fall specials ---------- */
+.slider{position:relative}
+.slides{display:flex;gap:clamp(14px, 2vw, 24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--edge);padding:0 var(--edge);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 76%;scroll-snap-align:start;margin:0}
+@media (min-width:640px){.slide{flex-basis:42%}}
+@media (min-width:1000px){.slide{flex-basis:min(360px, 28vw)}}
+.slide .frame{aspect-ratio:4/5;overflow:hidden;display:flex;align-items:center;justify-content:center;border-radius:28px;background:radial-gradient(circle at 50% 58%, #FFFFFF 0%, #F3EEE6 45%, #E3DBCF 100%)}
+.drink-img{width:78%;height:auto;max-height:88%;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(60,40,20,.18));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.slide:hover .drink-img{transform:translateY(-6px) scale(1.02)}
+.slide figcaption{padding-top:16px;text-align:center}
+.slide h3{font-size:1.05rem;font-weight:600;letter-spacing:0}
+.slider-controls{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:32px}
+.progress{width:180px;height:1px;background:rgba(26,26,26,.18);position:relative}
+.progress i{position:absolute;left:0;top:-1px;height:3px;background:var(--orange);transition:left .3s, width .3s}
+.arrows button{width:48px;height:48px;border:0;background:none;color:var(--espresso);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;opacity:.6}
+.arrows button:hover{opacity:1}
+.arrows svg{width:22px;height:22px}
+
+/* ---------- Menu ---------- */
+.menu-boards{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:clamp(12px, 3vw, 32px);max-width:960px;margin:0 auto}
+.board{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;color:inherit;font:inherit}
+.board .frame{aspect-ratio:17/22;overflow:hidden;background:#F5EEDC}
+.board .frame > *{transition:transform .5s ease}
+.board:hover .frame > *{transform:scale(1.02)}
+.board .cap{display:block;padding-top:16px;font-weight:600;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-align:center}
+.menu-note{text-align:center;max-width:34rem;margin:clamp(44px, 6vw, 64px) auto 0}
+.menu-note strong{display:block;color:#fff;font-weight:700;font-size:1.15rem;margin-bottom:6px}
+.menu-note p{margin:0}
+.menu-note p + p{margin-top:12px}
+
+/* Lightbox */
+dialog.lightbox{width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(18,18,18,.97);color:#fff}
+dialog.lightbox::backdrop{background:rgba(18,18,18,.97)}
+.lb-inner{display:grid;grid-template-rows:auto 1fr auto;height:100%;padding:calc(12px + env(safe-area-inset-top, 0px)) var(--gutter) calc(16px + env(safe-area-inset-bottom, 0px))}
+.lb-top{display:flex;justify-content:space-between;align-items:center;min-height:52px}
+.lb-top span{font-weight:300;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--concrete)}
+.lb-stage{display:flex;align-items:center;justify-content:center;min-height:0;touch-action:pan-y}
+.lb-stage > *{width:min(100%, 900px, calc((100dvh - 200px) * .773));height:auto;aspect-ratio:17/22;object-fit:contain}
+.lb-nav{display:flex;justify-content:center;gap:12px;padding-top:12px}
+.lb-btn{width:52px;height:52px;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-btn:hover{border-color:#fff}
+.lb-btn svg{width:22px;height:22px}
+.lb-close{border:0;margin-right:-12px}
+
+/* ---------- Locations ---------- */
+.loc-grid{display:grid;gap:64px}
+@media (min-width:900px){.loc-grid{grid-template-columns:1fr 1fr;gap:40px}}
+.loc-map{aspect-ratio:4/3;background:var(--ph-light)}
+.loc-map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(1) contrast(1.05);transition:filter .4s}
+.loc-map:hover iframe{filter:none}
+.loc-body{padding-top:28px;text-align:center}
+.loc-body h3{font-size:1.6rem;margin-bottom:14px}
+.loc-body p{margin:0 0 14px}
+.loc-body .hours{font-weight:500;color:var(--espresso)}
+.loc-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.loc-actions .btn{flex:0 1 auto;white-space:nowrap}
+.loc-extra{margin-top:20px !important}
+.review-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin-top:clamp(40px, 6vw, 64px)}
+.review-link{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:#fff;color:var(--espresso);font-weight:600;font-size:.88rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.08);transition:transform .2s, box-shadow .2s}
+.review-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.review-link svg{width:22px;height:22px;flex:none}
+
+/* ---------- Instagram ---------- */
+.insta{padding-bottom:0}
+.insta .head{margin-bottom:40px}
+.insta-follow{text-align:center;margin-bottom:48px}
+.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+@media (min-width:900px){.insta-grid{grid-template-columns:repeat(6,1fr)}}
+.insta-grid a{aspect-ratio:1;display:block;overflow:hidden}
+.insta-grid a:hover .ph{background:#353330}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;gap:40px;align-items:center}
+.about-media{aspect-ratio:4/5;margin:0 calc(-1 * var(--gutter))}
+.about-text{max-width:36rem;margin:0 auto}
+.about-text .lead{font-weight:600;font-size:clamp(1.2rem, 2.6vw, 1.5rem);line-height:1.4;color:var(--espresso);margin-bottom:24px}
+.sign{margin-top:28px;font-weight:600;color:var(--walnut)}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px}
+  .about-media{margin:0}
+}
+
+/* ---------- Careers ---------- */
+.careers{background:var(--forest);color:#d9e2db}
+.careers h2{color:#fff}
+.careers .label{color:#b9cdbf}
+.careers .head{margin-bottom:40px}
+.careers .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--espresso);color:var(--concrete);padding:clamp(72px, 10vw, 112px) 0 32px;font-size:.9rem;text-align:center}
+.site-footer .logo{display:inline-block}
+.site-footer .logo svg{width:150px}
+.tagline{margin:20px auto 0 !important;color:#d8d2c9;font-weight:300;letter-spacing:.04em}
+.footer-cols{display:grid;gap:36px;margin:56px auto 0;max-width:720px}
+@media (min-width:700px){.footer-cols{grid-template-columns:1fr 1fr}}
+.site-footer h3{font-weight:600;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.site-footer p{margin:0 0 4px}
+.site-footer a{text-decoration:none}
+.site-footer a:hover{color:#fff}
+.socials{display:flex;justify-content:center;gap:6px;margin-top:28px}
+.socials a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#d8d2c9;border:1px solid rgba(255,255,255,.14)}
+.socials a:hover{color:#fff;border-color:#fff}
+.socials svg{width:19px;height:19px}
+.footer-base{margin-top:64px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:.75rem;letter-spacing:.06em}
+
+/* ---------- Contact dialog ---------- */
+dialog.contact{width:min(460px, calc(100% - 28px));max-height:calc(100% - 40px);padding:0;border:0;background:var(--espresso);color:#cfc8be}
+dialog.contact::backdrop{background:rgba(10,10,10,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.contact-inner{padding:32px 28px 28px}
+.contact-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:24px}
+.contact-head h2{font-size:1.9rem;color:#fff}
+.close-btn{width:44px;height:44px;margin:-8px -10px 0 0;background:none;border:0;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center}
+.close-btn svg{width:22px;height:22px}
+.contact-loc{padding:20px 0;border-top:1px solid rgba(255,255,255,.1)}
+.contact-loc h3{font-weight:300;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--concrete);margin-bottom:12px}
+.contact-loc .row{display:flex;gap:8px;flex-wrap:wrap}
+.contact-loc .btn{flex:1 1 150px;min-height:46px;padding:0 14px}
+.contact-other{padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+.contact-other .email{display:inline-block;color:#fff}
+.contact-other .socials{justify-content:flex-start}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+  .btn--orange::after{animation:none;display:none}
+}
+
+/* ================= v4 header ================= */
+:root{--header-h:76px;--drink-w:clamp(260px, min(40vw, 50vh), 540px)}
+.h4{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);padding-top:env(safe-area-inset-top, 0px);border-bottom:1px solid rgba(255,255,255,.06)}
+.h4-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;padding:0 clamp(14px, 3vw, 28px)}
+.h4-left{position:relative;justify-self:start}
+.h4-right{justify-self:end;display:flex;align-items:center;gap:14px}
+.h4-logo{color:#fff;display:block}
+.h4-logo svg{display:block;width:clamp(104px, 11vw, 140px);height:auto;fill:currentColor}
+
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;font-family:var(--font);font-weight:600;font-size:.88rem;cursor:pointer;border:1px solid rgba(255,255,255,.14);color:#fff;background:linear-gradient(180deg, #3A3633, #252220)}
+.pill:hover{background:linear-gradient(180deg, #45403C, #2C2826)}
+.pill .ico{width:18px;height:18px}
+.pill .chev{width:16px;height:16px;transition:transform .2s}
+.menu-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+
+.menu-panel{position:absolute;top:calc(100% + 12px);left:0;width:min(300px, calc(100vw - 28px));padding:10px;border-radius:24px;background:#24211F;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.menu-panel ul{list-style:none;margin:0;padding:0}
+.menu-panel a,.menu-panel button{display:block;width:100%;text-align:left;padding:12px 16px;border-radius:14px;border:0;background:none;color:#fff;font:inherit;font-weight:600;font-size:1.05rem;text-decoration:none;cursor:pointer}
+.menu-panel a:hover,.menu-panel button:hover{background:rgba(255,255,255,.07)}
+.menu-panel .menu-social a{padding:0;border-radius:50%;width:40px}
+.menu-social{display:flex;gap:6px;padding:12px 10px 6px;margin-top:6px;border-top:1px solid rgba(255,255,255,.08)}
+
+.h4-social{display:none;gap:6px}
+.h4-social a,.menu-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;opacity:.8;transition:opacity .2s}
+.h4-social a:hover,.menu-social a:hover{opacity:1}
+.h4-social svg,.menu-social svg{width:20px;height:20px}
+@media (min-width:860px){.h4-social{display:flex}}
+
+/* CTA: single rounded gradient button, arrow turns up-right on hover */
+.cta{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;height:58px;padding:0 26px 0 32px;border:0;border-radius:999px;cursor:pointer;text-decoration:none;
+  font-family:var(--font);font-weight:700;font-size:.98rem;letter-spacing:.01em;color:#1A1A1A;
+  background:linear-gradient(180deg, #F7A653 0%, #E8822F 55%, #D46C1C 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 8px 24px rgba(232,130,47,.25);transition:box-shadow .25s}
+.cta:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 32px rgba(232,130,47,.42)}
+.cta-arrow{width:20px;height:20px;flex:none;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.cta:hover .cta-arrow,.cta:focus-visible .cta-arrow{transform:rotate(-45deg)}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent);transform:skewX(-20deg);animation:shimmer 3.4s ease-in-out 1.2s infinite;pointer-events:none}
+.cta--sm{height:44px;padding:0 16px 0 20px;gap:8px;font-size:.86rem}
+.cta--sm .cta-arrow{width:17px;height:17px}
+.cta--sm::after{display:none}
+@media (max-width:380px){.cta--sm{padding:0 12px 0 14px}}
+
+/* ================= v4 hero ================= */
+.h4-hero{position:relative;z-index:2;background:#1A1A1A;color:#fff;min-height:100svh;padding-bottom:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(var(--header-h) + env(safe-area-inset-top, 0px) + clamp(20px, 3vh, 40px)) var(--gutter) 0}
+.h4-glow{position:absolute;inset:0;overflow:hidden;pointer-events:none;background:
+  radial-gradient(40% 36% at 50% 95%, rgba(196,140,84,.32), transparent 70%),
+  radial-gradient(50% 40% at 50% 0%, rgba(232,130,47,.10), transparent 70%)}
+.h4-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:900px}
+
+.rating{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-size:.88rem}
+.rating .g-logo{width:20px;height:20px;padding:2px;border-radius:50%;background:#fff}
+.rating-text{color:#cfc8be}
+.rating-text strong{color:#fff}
+/* Stars: two layers, the gold one clipped to --rating */
+.stars{position:relative;display:inline-block;width:92px;height:17px;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z' fill='%23555'/%3E%3C/svg%3E") repeat-x left center/18.4px 17px}
+.stars-fill{position:absolute;inset:0;width:calc(var(--rating) / 5 * 100%);background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z' fill='%23F5B731'/%3E%3C/svg%3E") repeat-x left center/18.4px 17px}
+.stars--sm{width:80px;height:15px;background-size:16px 15px}
+.stars--sm .stars-fill{background-size:16px 15px}
+
+.h4-hero h1{color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.95;font-size:clamp(2.3rem, 6vw, 4.8rem);margin:16px 0 0;max-width:16ch}
+.h4-sub{margin:12px 0 22px;color:#cfc8be;font-size:clamp(1rem, 2.2vw, 1.2rem)}
+
+/* Testimonials */
+.quotes{margin-top:clamp(16px, 2.4vh, 26px);width:min(520px, 100%)}
+.quotes-track{display:grid}
+.quote{grid-area:1/1;margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .5s, transform .5s, visibility .5s}
+.quote.is-active{opacity:1;visibility:visible;transform:none}
+.quote blockquote{margin:0;font-size:clamp(.98rem, 2vw, 1.08rem);line-height:1.55;color:#e8e2d9;font-style:italic}
+.quote figcaption{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:#a39a8f}
+.quote figcaption svg{width:18px;height:18px;padding:2px;border-radius:50%;background:#fff}
+.quotes-dots{display:flex;justify-content:center;gap:2px;margin-top:4px}
+.quotes-dots button{width:28px;height:28px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.quotes-dots button::after{content:"";width:6px;height:6px;border-radius:50%;background:#5a5450;transition:width .25s, background .25s}
+.quotes-dots button[aria-current="true"]::after{width:18px;border-radius:3px;background:#E8822F}
+
+/* Featured drink rising from behind the torn edge */
+.h4-drink{position:relative;z-index:1;display:block;width:var(--drink-w);height:auto;margin-top:auto;padding-top:8px;margin-bottom:calc(-1 * var(--drink-w) * .22);filter:drop-shadow(0 24px 28px rgba(0,0,0,.35));animation:drink-in 1.1s cubic-bezier(.2,.7,.2,1) .2s both}
+@keyframes drink-in{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+
+
+
+@media (prefers-reduced-motion:reduce){
+  .h4-drink{animation:none}
+  .cta::after{display:none}
+  .cta-arrow{transition:none}
+  .quote{transition:none}
+}
+@media (max-width:520px){.hide-sm{display:none}}
+
+/* Room for the drink that overlaps into the next section */
+#fall{padding-top:calc(var(--drink-w) * .22 + clamp(56px, 8vw, 96px))}
+
+/* ================= Headings: all caps, a little more letter spacing ================= */
+.h4-hero h1{letter-spacing:.01em}
+.head h2,.careers-text h2,.contact-head h2{text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
+.head h2{font-size:clamp(1.9rem, 5vw, 3.2rem)}
+.menu-note strong{text-transform:uppercase;letter-spacing:.06em;font-size:1rem}
+
+/* ================= Instagram ticker ================= */
+.insta .insta-follow{margin-bottom:44px}
+.ticker{overflow:hidden;padding-bottom:4px;-webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)}
+.ticker-track{display:flex;width:max-content;animation:tick 70s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-set{display:flex;gap:14px;padding-right:14px}
+.tick-item{flex:none;display:block;width:clamp(170px, 18vw, 240px);aspect-ratio:2/3;overflow:hidden;border-radius:4px}
+.tick-item .ph{height:100%}
+.tick-drink{height:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 55%, #3a332d, #231f1c)}
+.tick-drink img{width:80%;height:auto}
+@keyframes tick{from{transform:translateX(-50%)}to{transform:translateX(0)}}  /* drifts left → right */
+
+/* ================= Careers: angled photo stack ================= */
+.careers{overflow:hidden}
+.careers-grid{display:grid;gap:56px;align-items:center}
+.careers-text{text-align:left;max-width:30rem}
+.careers-text .label{color:#b9cdbf}
+.careers-text h2{color:#fff;font-size:clamp(2.2rem, 6vw, 4rem);margin-bottom:18px}
+.careers-text p{font-size:1.1rem;color:#d9e2db;margin-bottom:30px}
+.careers .actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px;justify-content:flex-start}
+.careers-email{color:#d9e2db;text-transform:none;letter-spacing:.02em;font-weight:500;font-size:.85rem}
+.stack{position:relative;height:clamp(380px, 90vw, 560px);margin:0 calc(-1 * var(--gutter))}
+.snap{position:absolute;width:min(56%, 300px);aspect-ratio:3/4;padding:8px;background:#fff;box-shadow:0 22px 40px rgba(0,0,0,.28);
+  opacity:0;transform:translateY(-140px) rotate(var(--r));transition:opacity .5s ease, transform .9s cubic-bezier(.34,1.56,.64,1)}
+.snap .ph{height:100%;background:#d9d3ca}
+.s1{--r:-8deg;left:2%;top:16%;z-index:1}
+.s2{--r:3deg;left:24%;top:30%;z-index:2;transition-delay:.12s}
+.s3{--r:9deg;left:44%;top:4%;z-index:3;transition-delay:.24s}
+.stack.is-in .snap{opacity:1;transform:translateY(0) rotate(var(--r))}
+.stack.is-in .s2:hover,.stack.is-in .s3:hover{transform:translateY(-16px) rotate(var(--r)) scale(1.02);transition:transform .45s cubic-bezier(.34,1.8,.64,1);transition-delay:0s}
+@media (min-width:900px){
+  .careers-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px}
+  .stack{height:600px;margin:0 0 0 calc(-1 * var(--edge) + 0px)}
+  .snap{width:300px}
+  .s1{left:20px;top:70px}
+  .s2{left:200px;top:190px}
+  .s3{left:360px;top:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ticker-track{animation:none}
+  .snap{opacity:1;transform:rotate(var(--r));transition:none}
+}
+
+/* ================= Round 6 refinements ================= */
+:root{--coffee-1:#E2C39E;--coffee-2:#C99C6B;--coffee-3:#A9784A}
+
+/* Hero: radial gradient background */
+.h4-hero{background:radial-gradient(ellipse 85% 70% at 50% 42%, #3B2D23 0%, #251E1A 45%, #161414 100%)}
+
+/* Nav: no black bar, just frosted blur; text flips dark over light sections */
+.h4{background:rgba(255,255,255,.02);border-bottom-color:rgba(255,255,255,.08);transition:color .3s, border-color .3s}
+.h4-logo,.h4-social a{transition:color .3s}
+.h4.on-light{border-bottom-color:rgba(26,26,26,.08)}
+.h4.on-light .h4-logo,.h4.on-light .h4-social a{color:#1A1A1A}
+
+/* Coffee-colored CTA, slimmer */
+.cta{height:48px;padding:0 20px 0 24px;gap:10px;font-size:.9rem;color:#1A1A1A;
+  background:linear-gradient(180deg, var(--coffee-1) 0%, var(--coffee-2) 55%, var(--coffee-3) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4), 0 6px 18px rgba(169,120,74,.25)}
+.cta:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4), 0 8px 26px rgba(169,120,74,.42)}
+.cta-arrow{width:18px;height:18px}
+.cta--sm{height:38px;padding:0 14px 0 18px;font-size:.82rem}
+.cta--sm .cta-arrow{width:15px;height:15px}
+.quotes-dots button[aria-current="true"]::after,.progress i{background:var(--coffee-2)}
+.pill{min-height:38px;padding:0 14px 0 12px;font-size:.82rem}
+
+/* All other buttons: same rounded, slimmer style */
+.btn{min-height:46px;padding:0 22px;border-radius:999px;font-size:.88rem;font-weight:600;letter-spacing:.01em;text-transform:none}
+.btn svg{width:16px;height:16px}
+.contact-loc .btn{min-height:42px}
+.lb-btn{border-radius:50%;width:46px;height:46px}
+.lb-close{border-radius:50%}
+
+/* Section labels: small, spaced, caps, bolder */
+.label{font-weight:600;font-size:.74rem;letter-spacing:.3em;color:#a39a8f}
+.light .label{color:#6f665d}
+
+/* Careers: keep photos inside their column, text on top */
+.careers-text{position:relative;z-index:5}
+@media (min-width:900px){
+  .stack{height:560px;margin:0;max-width:540px}
+  .snap{width:240px}
+  .s1{left:0;top:80px}
+  .s2{left:135px;top:200px}
+  .s3{left:270px;top:20px}
+}
+
+/* Footer (v4): left aligned, stacked locations */
+.f4{background:#161414;color:#a39a8f;padding:clamp(64px, 9vw, 104px) 0 28px;font-size:.92rem}
+.f4-grid{display:grid;gap:44px}
+@media (min-width:800px){.f4-grid{grid-template-columns:1.4fr 1fr 1fr;gap:56px}}
+.f4-logo{display:inline-block;color:#fff}
+.f4-logo svg{display:block;width:150px;height:auto;fill:currentColor}
+.f4-tag{margin:18px 0 0;color:#d8d2c9;max-width:20rem}
+.f4-social{display:flex;gap:4px;margin-top:20px;margin-left:-10px}
+.f4-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:#fff;opacity:.8;transition:opacity .2s}
+.f4-social a:hover{opacity:1}
+.f4-social svg{width:20px;height:20px}
+.f4-loc{display:flex;flex-direction:column;gap:4px;font-style:normal;line-height:1.5}
+.f4-loc strong{color:#fff;font-weight:700;font-size:1rem;margin-bottom:6px}
+.f4-loc a{color:#d8d2c9;text-decoration:none;margin-top:4px}
+.f4-loc a:hover{color:#fff}
+.f4-base{margin:56px 0 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);font-size:.75rem;letter-spacing:.06em}
+
+/* ================= Round 7 ================= */
+.h4{border-bottom:0}
+.h4.on-light{border-bottom:0}
+.h4-row{height:92px;padding:0 clamp(18px, 3.4vw, 40px)}
+:root{--header-h:92px}
+@media (max-width:640px){.h4-row{height:80px}:root{--header-h:80px}}
+/* Careers: dark brown with a slight gradient */
+.careers{background:linear-gradient(160deg, #3E2D21 0%, #2C1F17 55%, #1F1611 100%);color:#e0d6cb}
+.careers-text .label{color:#c9b39b}
+.careers-text p,.careers-email{color:#e0d6cb}
+.snap img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ================= Round 8 ================= */
+/* Careers stack: smile left, team center on top, guest top-right at the back */
+.s1{z-index:2}
+.s2{z-index:3}
+.s3{z-index:1}
+.stack.is-in .snap:hover{transform:translateY(-16px) rotate(var(--r)) scale(1.03);z-index:6;transition:transform .45s cubic-bezier(.34,1.8,.64,1);transition-delay:0s}
+.s1{--r:-8deg}.s2{--r:3deg}.s3{--r:9deg}
+@media (max-width:899px){
+  .stack{margin:0}
+  .snap{width:48%}
+  .s1{left:0;top:22%}
+  .s2{left:25%;top:32%}
+  .s3{left:49%;top:2%}
+}
+@media (min-width:900px){
+  .s1{left:0;top:110px}
+  .s2{left:140px;top:220px}
+  .s3{left:300px;top:0}
+}
+.careers-text p.careers-email{margin:0;font-size:.9rem;color:#e0d6cb}
+.careers-email a{color:#fff;text-decoration:underline;text-decoration-color:var(--coffee-2);text-underline-offset:4px}
+.careers-email a:hover{text-decoration-color:#fff}
+
+/* About on dark (Instagram hidden, so it no longer sits between two light sections) */
+#about .about-text .lead{color:#fff}
+#about .sign{color:var(--coffee-1)}
+#about .about-media{object-fit:cover;border-radius:4px}
+
+/* ================= Round 9 ================= */
+/* Section labels: semi-bold */
+.label,.careers-text .label{font-weight:600}
+
+/* Careers hover: lift in place only (no reordering, no scaling) */
+.stack.is-in .snap:hover{transform:translateY(-12px) rotate(var(--r));z-index:auto;transition:transform .45s cubic-bezier(.34,1.8,.64,1);transition-delay:0s}
+.s1:hover{z-index:2}.s2:hover{z-index:3}.s3:hover{z-index:1}
+
+/* Hero: more air under the nav, smaller sub + testimonial */
+.h4-hero{padding-top:calc(var(--header-h) + env(safe-area-inset-top, 0px) + clamp(40px, 7vh, 80px))}
+.h4-hero h1{margin-top:26px}
+.h4-sub{font-size:clamp(.9rem, 1.5vw, 1rem);margin:18px 0 30px;letter-spacing:.02em}
+.quotes{margin-top:clamp(24px, 3.4vh, 44px)}
+.quote blockquote{font-size:clamp(.86rem, 1.4vw, .95rem)}
+.quote figcaption{font-size:.72rem}
+
+/* Menu boards: padded cream mat, rounded corners, soft glow + shadow */
+.menu-boards{position:relative}
+.menu-boards::before{content:"";position:absolute;inset:-12% -8%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 50% 50%, rgba(201,156,107,.18), transparent 70%)}
+.board{position:relative;z-index:1}
+.board .frame{padding:clamp(10px, 1.6vw, 18px);background:#F5EEDB;border-radius:18px;box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 24px 60px rgba(0,0,0,.45), 0 6px 16px rgba(0,0,0,.25);aspect-ratio:auto}
+.board .frame img{border-radius:8px;width:100%;height:auto;aspect-ratio:17/22}
+.board .cap{padding-top:20px}
+
+/* Our Story: image left, all text right, left-aligned */
+.about4 .about-text{text-align:left;max-width:34rem;margin:0}
+.about4 .about-text .label{margin-bottom:16px}
+.about4 h2{color:#fff;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(2rem, 5vw, 3.2rem);margin-bottom:28px}
+@media (min-width:900px){.about4{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:88px}}
+
+/* ================= Round 10 ================= */
+/* Hero: neutral charcoal radial (black → charcoal, no brown) */
+.h4-hero{background:radial-gradient(ellipse 85% 70% at 50% 42%, #3C3C3C 0%, #2A2A2A 42%, #161616 100%)}
+.h4-glow{background:radial-gradient(40% 36% at 50% 95%, rgba(255,255,255,.07), transparent 70%)}
+
+/* Hero cup: wrapper keeps the entrance animation; the image itself wiggles on hover */
+.h4-drink{display:block}
+.h4-drink .cup{display:block;width:100%;height:auto;transform-origin:50% 88%}
+.h4-drink:hover .cup{animation:cup-wiggle .9s ease-in-out}
+@keyframes cup-wiggle{0%{transform:rotate(0)}20%{transform:rotate(-4deg)}45%{transform:rotate(3.5deg)}70%{transform:rotate(-2deg)}85%{transform:rotate(1deg)}100%{transform:rotate(0)}}
+
+/* Steam: three soft wisps rising and fading above the cup */
+.steam{position:absolute;left:50%;bottom:76%;width:34%;height:auto;transform:translateX(-50%);overflow:visible;pointer-events:none;filter:blur(5px)}
+.steam .w{fill:none;stroke:#fff;stroke-width:9;stroke-linecap:round;opacity:0;transform-box:fill-box;transform-origin:50% 100%;animation:steam 4.2s ease-in-out infinite}
+.steam .w2{animation-delay:1.4s;stroke-width:11}
+.steam .w3{animation-delay:2.8s}
+@keyframes steam{
+  0%{opacity:0;transform:translateY(24px) scaleY(.6) scaleX(.9)}
+  25%{opacity:.38}
+  60%{opacity:.22}
+  100%{opacity:0;transform:translateY(-30px) scaleY(1.15) scaleX(1.25)}
+}
+
+/* Buttons: cream/white like the cup, light brown at the bottom edge */
+.cta,.btn--white{color:#1A1A1A;border:0;
+  background:linear-gradient(180deg, #FFFFFF 0%, #FBF8F2 55%, #EADCC8 100%);
+  box-shadow:inset 0 -2px 0 rgba(169,120,74,.22), 0 6px 18px rgba(0,0,0,.28)}
+.cta:hover,.btn--white:hover{background:linear-gradient(180deg, #FFFFFF 0%, #FFFDF8 55%, #F0E4D2 100%);box-shadow:inset 0 -2px 0 rgba(169,120,74,.28), 0 8px 24px rgba(0,0,0,.36)}
+.cta::after{background:linear-gradient(100deg, transparent, rgba(201,156,107,.22), transparent)}
+
+/* Your Craft: fixed layering (team photo always on top), hover never changes depth */
+.stack .snap.s3,.stack.is-in .snap.s3:hover{z-index:1}
+.stack .snap.s1,.stack.is-in .snap.s1:hover{z-index:2}
+.stack .snap.s2,.stack.is-in .snap.s2:hover{z-index:3}
+
+/* Our Story photo: same white border as the Your Craft photos */
+.about-photo{padding:10px;background:#fff;box-shadow:0 22px 40px rgba(0,0,0,.35);max-width:440px;width:100%;justify-self:center}
+.about-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+@media (prefers-reduced-motion:reduce){.steam{display:none}.h4-drink:hover .cup{animation:none}}
+
+/* ================= Round 11 ================= */
+/* Steam reads as passing BEHIND the testimonial: soft dark halo behind the text block dims the steam there */
+.quotes{position:relative;isolation:isolate}
+.quotes::before{content:"";position:absolute;inset:-26px -60px -18px;z-index:-1;pointer-events:none;
+  background:radial-gradient(closest-side, rgba(30,30,30,.85), rgba(30,30,30,.55) 55%, transparent)}
+.quote blockquote,.quote figcaption{text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.steam .w{stroke-width:8}
+@keyframes steam{
+  0%{opacity:0;transform:translateY(24px) scaleY(.6) scaleX(.9)}
+  25%{opacity:.32}
+  60%{opacity:.16}
+  100%{opacity:0;transform:translateY(-34px) scaleY(1.15) scaleX(1.25)}
+}
+
+/* Menu boards: sharp corners, white border like the photo treatment */
+.board .frame{border-radius:0;padding:10px;background:#fff;box-shadow:0 22px 50px rgba(0,0,0,.45), 0 6px 14px rgba(0,0,0,.22)}
+.board .frame img{border-radius:0}
+
+/* ================= Round 12 ================= */
+/* Testimonial: frosted glass card (5% white, slim stroke, blurs the steam behind it) */
+.quotes::before{display:none}
+.quotes{padding:22px 28px 14px;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+.quote blockquote,.quote figcaption{text-shadow:none}
+
+/* Steam: more visible */
+.steam{filter:blur(4px);width:38%}
+.steam .w{stroke-width:11}
+.steam .w2{stroke-width:13}
+@keyframes steam{
+  0%{opacity:0;transform:translateY(24px) scaleY(.6) scaleX(.9)}
+  25%{opacity:.62}
+  60%{opacity:.38}
+  100%{opacity:0;transform:translateY(-38px) scaleY(1.18) scaleX(1.3)}
+}
+
+/* Menus: whole element grows 5% on hover, nothing else moves */
+.board .frame > *{transition:none}
+.board:hover .frame > *{transform:none}
+.board{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.board:hover,.board:focus-visible{transform:scale(1.05)}
+
+/* Events */
+.events-grid{display:grid;gap:44px;align-items:center}
+.events-text{max-width:30rem}
+.events-text h2{color:var(--espresso);text-transform:uppercase;letter-spacing:.03em;font-size:clamp(2rem, 5vw, 3.2rem);margin:0 0 20px}
+.events-text p{font-size:1.05rem;margin-bottom:30px}
+.events-text .label{margin-bottom:16px}
+.cta--dark{color:#fff;background:linear-gradient(180deg, #3A3A3A 0%, #222 60%, #161616 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 6px 18px rgba(0,0,0,.2)}
+.cta--dark:hover{background:linear-gradient(180deg, #444 0%, #2a2a2a 60%, #1a1a1a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 8px 24px rgba(0,0,0,.28)}
+.cta--dark::after{background:linear-gradient(100deg, transparent, rgba(255,255,255,.18), transparent)}
+.ev-slider{width:100%;max-width:440px;justify-self:center}
+.ev-track{list-style:none;margin:0;padding:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ev-track::-webkit-scrollbar{display:none}
+.ev-slide{flex:0 0 100%;scroll-snap-align:start;padding:6px 10px 28px}
+.ev-frame{padding:10px;background:#fff;box-shadow:0 22px 44px rgba(0,0,0,.25), 0 6px 14px rgba(0,0,0,.12);transform:rotate(-1.5deg)}
+.ev-frame img{display:block;width:100%;height:auto}
+.ev-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px}
+.ev-controls[hidden]{display:none}
+.ev-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(26,26,26,.25);background:none;color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ev-btn svg{width:18px;height:18px}
+.ev-dots{display:flex;gap:2px}
+.ev-dots button{width:24px;height:24px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ev-dots button::after{content:"";width:6px;height:6px;border-radius:50%;background:#b5ab9f}
+.ev-dots button[aria-current="true"]::after{background:var(--espresso);width:16px;border-radius:3px}
+@media (min-width:900px){.events-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:88px}.ev-slider{justify-self:end}}
+/* fit + shadow fixes */
+:root{--drink-w:clamp(260px, min(40vw, 46vh), 540px)}
+.h4-hero h1{margin-top:20px}
+.h4-sub{margin:16px 0 26px}
+.quotes{padding:16px 24px 6px}
+.quotes-dots{margin-top:2px}
+.ev-slide{padding:28px 32px 48px}
+.ev-slider{margin:-28px -32px -48px}
+@media (min-width:900px){.ev-slider{margin:-28px -32px -48px auto}}
+#menu{overflow-x:clip}
+.ev-frame{box-shadow:0 12px 24px rgba(0,0,0,.22), 0 3px 8px rgba(0,0,0,.12)}
+
+/* ================= Round 13 ================= */
+.f4-dir{font-size:.8rem;font-weight:600;letter-spacing:.04em;color:#d8d2c9;text-decoration:underline !important;text-decoration-color:rgba(201,156,107,.7) !important;text-underline-offset:4px;margin-top:2px !important}
+/* Our Story: smaller sentence-case headline, still prominent */
+.about4 h2.story-head{text-transform:none;letter-spacing:-.01em;font-size:clamp(1.55rem, 3.2vw, 2.25rem);line-height:1.25;margin-bottom:26px}
+/* Events slides: keep frames the same shape */
+.ev-frame img{aspect-ratio:4/5;object-fit:cover}
+.ev-slide{display:flex;align-items:center}
+.ev-slide .ev-frame{width:100%}
+
+/* ================= Round 14 ================= */
+/* Testimonial: glass wraps only the quote + source; dots sit outside */
+.quotes{padding:0;border:0;border-radius:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.quotes-track{padding:18px 26px 16px;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+.quotes-dots{margin-top:10px}
+
+/* Locations: photos instead of maps (same white-border treatment as other photos) */
+.loc-photo{padding:10px;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.18), 0 4px 12px rgba(0,0,0,.08)}
+.loc-photo .ph{aspect-ratio:4/3;height:auto;background:var(--ph-light)}
+.loc-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.quotes-track{padding:14px 26px 12px}
+.quotes-dots{margin-top:6px}
+:root{--drink-w:clamp(260px, min(40vw, 44vh), 540px)}
+/* Testimonial content centered inside the glass card (vertically + horizontally) */
+.quotes-track{align-items:center;justify-items:center;text-align:center}
+.quote{align-self:stretch;justify-content:center;width:100%}
+
+/* ================= Round 15: hero background photo ================= */
+.h4-hero{isolation:isolate}
+.h4-bg{position:absolute;top:0;bottom:0;height:100%;width:auto;max-width:none;z-index:-1;pointer-events:none;user-select:none;
+  object-fit:cover;filter:brightness(.78) saturate(.9);opacity:.9}
+.h4-bg--right{right:0;width:min(48vw, 760px);object-position:62% 30%;
+  -webkit-mask-image:linear-gradient(to left, #000 0%, #000 38%, rgba(0,0,0,.55) 62%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to left, #000 0%, #000 38%, rgba(0,0,0,.55) 62%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%);mask-composite:intersect}
+.h4-bg--left{left:0;width:min(48vw, 760px);
+  -webkit-mask-image:linear-gradient(to right, #000 0%, #000 38%, rgba(0,0,0,.55) 62%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to right, #000 0%, #000 38%, rgba(0,0,0,.55) 62%, transparent 100%), linear-gradient(to top, transparent 0%, #000 22%);mask-composite:intersect}
+.h4-glow{z-index:-1}
+/* Phones: text spans the full width, so the photo stays faint and fades out sooner */
+@media (max-width:760px){
+  .h4-bg--right{width:78vw;opacity:.38;object-position:70% 25%}
+  .h4-bg--left{width:78vw;opacity:.38}
+}
+@media (min-width:761px){.h4-bg--right{width:min(45vw, 760px)}.h4-bg--left{width:min(45vw, 760px)}}
+
+/* Left background photo: quieter than the right so the right stays dominant */
+.h4-bg--left{object-position:35% 30%;opacity:.7;filter:brightness(.68) saturate(.85)}
+@media (max-width:760px){.h4-bg--left{display:none}}
+.h4-bg--left{object-position:95% 30%;opacity:.6;filter:brightness(.5) saturate(.8) contrast(.92);
+  -webkit-mask-image:linear-gradient(to right, #000 0%, #000 26%, rgba(0,0,0,.45) 52%, transparent 88%), linear-gradient(to top, transparent 0%, #000 22%);
+  mask-image:linear-gradient(to right, #000 0%, #000 26%, rgba(0,0,0,.45) 52%, transparent 88%), linear-gradient(to top, transparent 0%, #000 22%)}
+
+/* ================= Round 16 ================= */
+/* Hero background photos: quieter, left one pushed further out */
+.h4-bg--right{opacity:.72;filter:brightness(.66) saturate(.88)}
+@media (min-width:761px){
+  .h4-bg--left{width:min(36vw, 600px);object-position:100% 30%;opacity:.42;filter:brightness(.42) saturate(.75) contrast(.9);
+    -webkit-mask-image:linear-gradient(to right, #000 0%, #000 16%, rgba(0,0,0,.35) 45%, transparent 78%), linear-gradient(to top, transparent 0%, #000 22%);
+    mask-image:linear-gradient(to right, #000 0%, #000 16%, rgba(0,0,0,.35) 45%, transparent 78%), linear-gradient(to top, transparent 0%, #000 22%)}
+}
+/* Location photos: portrait 4:5 */
+.loc-photo{max-width:460px;margin:0 auto}
+.loc-photo img{aspect-ratio:4/5}
+.loc-photo img{height:auto}
+
+/* ================= 3D latte ================= */
+.latte3d{position:relative;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.latte3d.is-grabbing{cursor:grabbing}
+.latte3d-fallback{display:block;width:100%;height:auto;transition:opacity .5s}
+.latte3d-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .6s;outline:none}
+.latte3d.is-3d .latte3d-canvas{opacity:1}
+.latte3d.is-3d .latte3d-fallback{opacity:0}
+.h4-drink:has(.latte3d.is-3d){filter:none}              /* the 3D scene draws its own contact shadow */
+.h4-drink:has(.latte3d.is-3d):hover .cup{animation:none} /* old photo wiggle only applies to the fallback */
+
+/* ===== 3D latte: three-axis upgrade ===== */
+.h4-drink .steam{transition:opacity .45s ease}
+.h4-drink:has(.latte3d.is-moving) .steam{opacity:0}          /* steam fades while the cup is turned away from its pose */
+
+
+/* ===== Variant: rotating right-side photos ===== */
+.h4-rotator{overflow:hidden}
+.h4-rotator img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.8s ease-in-out}
+.h4-rotator img.is-on{opacity:1}
+/* photos are shifted down to clear the nav; their top edge fades so the shift never shows a hard line */
+/* each photo also fades its own left edge to 0% (photos are shifted right, so their edge would otherwise show as a line) */
+.h4-rotator img{-webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 16%), linear-gradient(to right, transparent 0%, #000 45%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom, transparent 0%, #000 16%), linear-gradient(to right, transparent 0%, #000 45%);mask-composite:intersect}
+/* team photo: extra fade so the barista on the left stays out from behind the text */
+.h4-rotator img.rot-team{-webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 16%), linear-gradient(to left, #000 0%, #000 34%, rgba(0,0,0,.25) 58%, transparent 74%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom, transparent 0%, #000 16%), linear-gradient(to left, #000 0%, #000 34%, rgba(0,0,0,.25) 58%, transparent 74%);mask-composite:intersect}
+@media (prefers-reduced-motion:reduce){.h4-rotator img{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- Reusable graphics -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="brew-logo" viewBox="0 0 580.08 276.17"><g > <g> <path d="M579.86,228.78H0S.05.01.05.01h579.8s.01,228.77.01,228.77ZM573.72,222.8V5.89s-567.62,0-567.62,0l.09,216.92h567.53Z"/> <path d="M417.24,248.78c7.38,1.92,11.12,9.09,10.04,15.63-1.15,6.95-7.26,11.62-14.33,11.71-9.24.12-15.78-6.72-15.09-15.17.76-9.28,9.59-14.72,19.38-12.17ZM409.87,254.02c-5.36,1.88-6.48,7.41-5.02,11.23,1.75,4.58,6.47,6.27,10.36,5.07,4.92-1.52,6.72-6.58,5.41-11.03-1.22-4.15-5.82-7-10.75-5.27Z"/> <path d="M68.39,276.11c-8.56-.03-14.77-6.2-14.81-14.01s6.63-14.17,15.15-14.03,14.47,6.18,14.47,14.02c0,7.78-6.33,14.05-14.82,14.02ZM64.97,254.25c-4.98,2.2-5.98,8-4.08,11.83,2.06,4.15,6.81,5.68,10.94,3.91,4.35-1.87,5.92-7,4.33-11.24-1.57-4.18-6.31-6.67-11.19-4.5Z"/> <polygon points="369.14 275.37 362.81 275.63 362.85 264.51 350.66 264.53 350.68 275.62 344.2 275.55 344.26 248.87 350.71 248.54 350.67 259.35 362.8 259.2 362.81 248.6 369.1 248.66 369.14 275.37"/> <path d="M474.3,248.87l6.39-.24-.23,16.72c-.09,6.41-5.2,10.33-11,10.77-7.4.57-13.36-3.99-13.39-11.62l-.06-15.89,6.43-.02.09,17.26c.01,2.77,3.51,4.94,5.82,4.89,3.29-.07,5.9-2.49,5.91-5.99l.05-15.88Z"/> <polygon points="277.96 264.46 265.61 264.39 265.74 270.61 279.88 270.57 280.47 275.56 259.25 275.6 259.25 248.59 279.66 248.59 279.8 253.59 265.72 253.57 265.71 259.48 278.11 259.41 277.96 264.46"/> <polygon points="578.27 264.27 565.64 264.44 565.74 270.59 580.08 270.62 579.96 275.57 559.24 275.6 559.2 248.6 579.68 248.58 579.79 253.61 565.69 253.6 565.73 259.45 578.05 259.45 578.27 264.27"/> <path d="M228.39,264.27l-12.78.16.11,6.16h14.37s-.1,5-.1,5h-20.78s.04-27,.04-27h20.51s.05,5.02.05,5.02l-14.16.02.22,5.82h10.93c.69,0,1.24,2.15,1.6,4.83Z"/> <path d="M525.37,275.13c-5.6,1.71-11.18.97-16.64-1.65l1.62-4.94c8.93,4.36,15.42,1.75,14.39-.47-.29-.63-1.62-2.04-2.3-2.24l-8.49-2.5c-2.62-.77-5.03-4.04-5.05-6.2-.03-3.28,1.71-6.46,4.78-7.67,5.63-2.21,11.66-1.76,16.19,1.38l-1.98,3.54c-.83,1.48-10.69-5.18-13.15,2.96l9.29,3.06c3.55,1.17,6.77,3.31,6.91,6.7s-2,6.93-5.58,8.03Z"/> <path d="M22.7,267.4l4.37,3.93c-3.03,2.86-6.11,4.38-9.87,4.73-8.87.82-15.81-5.46-16.09-13.3-.33-8.9,6.83-15.29,15.82-14.62,4,.29,7,1.77,10.08,4.66l-4.12,3.87c-3.97-4.05-9.04-4.11-12.62-1.05-3.58,3.05-3.78,9.13-.46,12.44s8.63,4.04,12.89-.66Z"/> <polygon points="130.56 260.71 130.71 265.78 118.09 265.77 118.08 275.58 111.82 275.49 111.81 248.58 132.08 248.59 132.03 253.62 118.13 253.58 118.1 260.7 130.56 260.71"/> <polygon points="178.99 260.68 179.29 265.8 166.85 265.76 166.82 275.61 160.54 275.46 160.56 248.59 180.87 248.58 180.94 253.63 166.85 253.58 166.89 260.74 178.99 260.68"/> <path d="M541.46,190.59H38.46s-.04-152.47-.04-152.47l503.04.02v152.45ZM117.42,113.4c6.82-3.52,9.9-9.47,9.89-16.31-.01-6.51-3.59-11.89-9.75-15.38-4.82-1.81-10.27-3.37-15.65-3.37h-38.08s-.02,73.27-.02,73.27l41.09-.08c6.11-.01,12.24-1.89,17.55-4.22,6.7-4.46,9.35-11.02,8.3-18.96-.88-6.67-5.31-12.21-13.34-14.95ZM248.88,151.55l-16.42-23.64c10.18-4.18,15.17-13.11,15.14-23.28-.03-10.05-5.12-18.24-14.09-22.87-5.09-1.88-10.92-3.44-16.6-3.44l-32.85.03v73.21s16.91.03,16.91.03l.13-20.49,15.71.14,13.8,20.25,18.26.06ZM351.96,120.95l-.06-13.16-34.03.04v-15.95s38.69-.06,38.69-.06l-.09-13.51h-55.41s-.01,73.27-.01,73.27h56.73s-.14-13.64-.14-13.64l-39.74.07-.07-17.04,34.12-.03ZM506,78.57l-16.89,51.44-16.88-51.68-15.61.02-17.31,51.39-16.54-51.35h-17.51s24.06,73.29,24.06,73.29l18.06-.2,16.65-49.38,16.13,49.46,18.23-.05,23.87-73.03-16.26.1Z"/> <path d="M105.2,138.48l-24.53.4.04-18.31,24.69.44c4.98.09,8.31,4.23,8.58,8.12.31,4.43-3.03,9.25-8.78,9.35Z"/> <path d="M102.54,107.89l-21.82.55-.04-17.51,21.16.42c4.72.09,8.21,3.95,8.47,7.72.27,3.95-2.43,8.68-7.77,8.82Z"/> <path d="M219.08,117.26l-18.07.48.02-25.73,16.79.29c7.36.13,12.32,5.19,12.64,11.97.29,6.18-3.34,12.77-11.38,12.99Z"/> </g> </g> </symbol>
+  <symbol id="bean" viewBox="-20 -14 40 28" overflow="visible">
+    <ellipse cx="0" cy="0" rx="19" ry="13"/>
+    <path d="M-15 1 C-7 -6, 6 6, 15 -1" fill="none" stroke="#1a0f08" stroke-width="2.6" stroke-linecap="round" opacity=".75"/>
+    <ellipse cx="-5" cy="-6" rx="8" ry="3" fill="#fff" opacity=".07"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 2h8a6 6 0 0 1 6 6v8a6 6 0 0 1-6 6H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Zm.2 2A4.2 4.2 0 0 0 4 8.2v7.6A4.2 4.2 0 0 0 8.2 20h7.6a4.2 4.2 0 0 0 4.2-4.2V8.2A4.2 4.2 0 0 0 15.8 4H8.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2ZM17.4 5.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M9.1 23.7v-8H6.6V12h2.5v-1.6c0-4.1 1.8-6 5.9-6 .8 0 2.1.2 2.6.3v3.3c-.3 0-.8-.1-1.4-.1-2 0-2.7.7-2.7 2.7V12h3.9l-.7 3.7h-3.2v8.2C19.4 23.2 24 18.2 24 12 24 5.4 18.6 0 12 0S0 5.4 0 12c0 5.6 3.9 10.4 9.1 11.7Z"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M12.5 0h3.9c.1 1.5.6 3.1 1.8 4.2 1.1 1.1 2.7 1.6 4.2 1.8V10c-1.4 0-2.9-.3-4.2-1-.6-.3-1.1-.6-1.6-.9v8.7c-.1 1.4-.5 2.8-1.4 3.9-1.3 1.9-3.6 3.2-5.9 3.2-1.4.1-2.9-.3-4.1-1-2-1.2-3.4-3.4-3.6-5.7v-1.5c.2-1.9 1.1-3.7 2.6-5 1.7-1.4 4-2.1 6.2-1.7v4.4c-1-.3-2.2-.2-3 .4-.6.4-1.1 1-1.4 1.8-.2.5-.1 1.1-.1 1.6.2 1.6 1.8 3 3.5 2.9 1.1 0 2.2-.7 2.8-1.6.2-.3.4-.7.4-1.1.1-1.8.1-3.6.1-5.4V0Z"/></symbol>
+  <symbol id="i-tripadvisor" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 0a12 12 0 1 1 0 24 12 12 0 0 1 0-24ZM7.3 8.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8Zm9.4 0a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8ZM7.3 11.4a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6Zm9.4 0a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-google" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></symbol>
+  <symbol id="i-tripadvisor-color" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#34E0A1"/><g fill="none" stroke="#000" stroke-width="2.6"><circle cx="16" cy="26" r="6"/><circle cx="32" cy="26" r="6"/><path d="M8 18h5M40 18h-5M13 18a19 19 0 0 1 22 0M21.5 26l2.5 4 2.5-4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="16" cy="26" r="1.8"/><circle cx="32" cy="26" r="1.8"/></symbol>
+</svg>
+
+
+
+<!-- ============ HEADER (v4: menu left · logo center · socials + CTA right) ============ -->
+<header class="h4" id="site-header">
+  <div class="h4-row">
+    <div class="h4-left">
+      <button class="pill pill--dark menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Menu</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="menu-panel" id="menu-panel" hidden>
+        <ul>
+          <li><a href="#fall">Fall specials</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><button type="button" data-open-contact>Contact</button></li>
+        </ul>
+        <div class="menu-social">
+          <a href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.facebook.com/brewcoffeebz/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+          <a href="https://www.tiktok.com/@brewcoffeebz" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <a class="h4-logo" href="#top" aria-label="Brew Coffee House, back to top">
+      <svg viewBox="0 0 580.08 276.17" aria-hidden="true"><use href="#brew-logo"/></svg>
+    </a>
+
+    <div class="h4-right">
+      <div class="h4-social">
+        <a href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a href="https://www.facebook.com/brewcoffeebz/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+        <a href="https://www.tiktok.com/@brewcoffeebz" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+      </div>
+      <button class="cta cta--sm" type="button" data-open-contact><span>Contact</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO (v4) ============ -->
+<section class="h4-hero" aria-labelledby="hero-title">
+  <!-- Background photo (right). Decorative: sits below everything else and fades out toward the centered text.
+       A matching left-side image can use the same pattern with class "h4-bg h4-bg--left". -->
+  <img class="h4-bg h4-bg--left" src="images/hero-bg-left.webp" alt="" aria-hidden="true" width="800" height="989" decoding="async">
+  <div class="h4-bg h4-bg--right h4-rotator" aria-hidden="true">
+    <!-- Hero photo rotation: crossfades every 7s. Add/remove <img> tags to change the set (first one loads immediately, the rest after the page loads).
+         Each photo is nudged right (transform: translateX) so faces stay clear of the centered text. -->
+    <img src="images/hero-bg-right.webp" alt="" width="697" height="872" class="rot-girl is-on" style="object-position:62% 30%;transform:translate(6%,4%)">
+    <img data-src="images/hero-rot-team.webp" alt="" width="646" height="859" class="rot-team" style="object-position:50% 35%;transform:translate(12%,5%)">
+    <img data-src="images/hero-rot-panini.webp" alt="" width="695" height="828" class="rot-panini" style="object-position:35% 30%;transform:translate(20%,10%)">
+    <img data-src="images/hero-rot-guest.webp" alt="" width="678" height="867" class="rot-guest" style="object-position:45% 25%;transform:translate(12%,10%)">
+  </div>
+  <div class="h4-glow" aria-hidden="true"></div>
+
+  <div class="h4-content">
+    <!-- Google rating: 4.4 from 158+ reviews (Ladyville 100 + Paradise Point 58). Update as reviews grow. -->
+    <a class="rating" href="https://www.google.com/search?q=Brew+Coffee+House+Belize" target="_blank" rel="noopener" aria-label="Rated 4.4 out of 5 from more than 158 Google reviews">
+      <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-google"/></svg>
+      <span class="stars" aria-hidden="true" style="--rating:4.4"><span class="stars-fill"></span></span>
+      <span class="rating-text"><strong>4.4</strong> · 158+ <span class="hide-sm">Google </span>reviews</span>
+    </a>
+
+    <h1 id="hero-title">Belize's premier coffee shop</h1>
+    <p class="h4-sub">with locations in Belize City and Ladyville</p>
+
+    <a class="cta" href="#fall"><span>See fall drink specials</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+    <!-- Testimonial slider. Each slide: stars, quote, source. To add one, copy a <figure class="quote">. -->
+    <div class="quotes" aria-roledescription="carousel" aria-label="Customer reviews">
+      <div class="quotes-track" aria-live="polite">
+        <figure class="quote is-active">
+          <blockquote>"Friendly staff, clean restaurant and delicious drinks."</blockquote>
+          <figcaption><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-google"/></svg>Google review</figcaption>
+        </figure>
+        <!-- TODO: confirm the source of this review (Google assumed) -->
+        <figure class="quote">
+          <blockquote>"Brew Coffee House is my go-to spot every time I'm in Belize."</blockquote>
+          <figcaption><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-google"/></svg>Google review</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Wide range of coffees are on the menu of this Brew Coffee Shop. I had a cappuccino along with a bagel."</blockquote>
+          <figcaption><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tripadvisor-color"/></svg>TripAdvisor review</figcaption>
+        </figure>
+      </div>
+      <div class="quotes-dots" role="group" aria-label="Choose a review"></div>
+    </div>
+  </div>
+
+  <!-- Featured drink: cut-out latte that sits across the line into the next section -->
+  <div class="h4-drink">
+    <!-- Steam: pure SVG + CSS, no video or Lottie needed -->
+    <svg class="steam" viewBox="0 0 200 220" aria-hidden="true">
+      <path class="w w1" d="M70 215 C50 175 92 150 72 112 S52 52 76 8"/>
+      <path class="w w2" d="M102 215 C124 172 82 146 104 104 S128 44 100 4"/>
+      <path class="w w3" d="M134 215 C116 178 152 152 134 116 S114 60 138 14"/>
+    </svg>
+    <!-- 3D latte (js/brew-latte-3d.js). The photo is the fallback until WebGL is ready, or if it isn't supported. -->
+    <div class="latte3d" data-latte-src="models/brew-latte.glb">
+      <img class="cup latte3d-fallback" src="images/hero-latte.webp" alt="Latte with leaf latte art in a white cup and saucer" width="1100" height="796" fetchpriority="high">
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ============ FALL SPECIALS ============
+     To add a drink, copy a <figure class="slide"> and point the <img> at a new cut-out
+     (transparent PNG/WebP, about 720px wide) in /images. -->
+<section class="section light" id="fall" aria-labelledby="fall-title">
+  <div class="wrap head">
+    <span class="label">Seasonal</span>
+    <h2 id="fall-title">Fall flavors are brewing</h2>
+    <p>Limited-time drinks, available at both locations<br>while the season lasts.</p>
+  </div>
+  <div class="slider" aria-roledescription="carousel" aria-label="Fall drinks">
+    <div class="slides" tabindex="0">
+      <figure class="slide"><div class="frame"><img class="drink-img" src="images/fall-pumpkin-spice.webp" alt="Pumpkin Spice Latte" width="720" height="860" loading="lazy"></div><figcaption><h3>Pumpkin Spice Latte</h3></figcaption></figure>
+      <figure class="slide"><div class="frame"><img class="drink-img" src="images/fall-apple-chai.webp" alt="Apple of My Chai Latte" width="720" height="860" loading="lazy"></div><figcaption><h3>Apple of My Chai Latte</h3></figcaption></figure>
+      <figure class="slide"><div class="frame"><img class="drink-img" src="images/fall-toasted-marshmallow-matcha.webp" alt="Toasted Marshmallow Matcha Latte" width="720" height="860" loading="lazy"></div><figcaption><h3>Toasted Marshmallow Matcha Latte</h3></figcaption></figure>
+      <figure class="slide"><div class="frame"><img class="drink-img" src="images/fall-pumpchata.webp" alt="Pumpchata Latte" width="720" height="860" loading="lazy"></div><figcaption><h3>Pumpchata Latte</h3></figcaption></figure>
+      <figure class="slide"><div class="frame"><img class="drink-img" src="images/fall-sea-salt-maple.webp" alt="Sea Salt Maple Shaken Espresso" width="720" height="860" loading="lazy"></div><figcaption><h3>Sea Salt Maple Shaken Espresso</h3></figcaption></figure>
+      <figure class="slide"><div class="frame"><img class="drink-img" src="images/fall-banana-bread-matcha.webp" alt="Banana Bread Matcha Latte" width="720" height="860" loading="lazy"></div><figcaption><h3>Banana Bread Matcha Latte</h3></figcaption></figure>
+    </div>
+    <div class="slider-controls">
+      <span class="arrows"><button type="button" data-dir="-1" aria-label="Previous drink"><svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button></span>
+      <div class="progress" aria-hidden="true"><i></i></div>
+      <span class="arrows"><button type="button" data-dir="1" aria-label="Next drink"><svg><use href="#i-arrow"/></svg></button></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============
+     Menu images live in /images (exported from the PDFs). To update, overwrite menu-drinks.webp / menu-bites.webp.
+     The lightbox shows whatever is inside .frame. -->
+<section class="section dark" id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Menu</span>
+      <h2 id="menu-title">Handcrafted Italian-inspired espresso + tasty bites</h2>
+    </div>
+    <div class="menu-boards">
+      <button class="board" type="button" data-lightbox="0" aria-label="Open the drinks menu">
+        <div class="frame"><img class="ph" src="images/menu-drinks.webp" alt="Brew Coffee House drinks menu" width="1275" height="1650" loading="lazy"></div>
+        <span class="cap">Drinks</span>
+      </button>
+      <button class="board" type="button" data-lightbox="1" aria-label="Open the bites menu">
+        <div class="frame"><img class="ph" src="images/menu-bites.webp" alt="Brew Coffee House bites menu" width="1275" height="1650" loading="lazy"></div>
+        <span class="cap">Bites</span>
+      </button>
+    </div>
+    <div class="menu-note">
+      <strong>Our menu changes with the seasons</strong>
+      <p>Come in to taste our seasonal specials.</p>
+      <p>Don't see your favorite? Ask, and we'll make it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============
+     Location photos: replace each .ph div with <img src="images/location-paradise-point.webp" alt="..."> (portrait 4:5).
+     "Get Directions" opens each Google Maps listing. -->
+<section class="section light" id="locations" aria-labelledby="loc-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Locations</span>
+      <h2 id="loc-title">Visit us in Belize City and Ladyville</h2>
+      <p>Two locations, same great coffee</p>
+    </div>
+    <div class="loc-grid">
+      <article class="loc">
+        <div class="loc-photo"><img src="images/location-paradise-point.webp" alt="A guest holding a Brew drink and a sign by the Paradise Point sign featuring Brew Coffee House" width="720" height="900" loading="lazy"></div>
+        <div class="loc-body">
+          <h3>Paradise Point, Belize City</h3>
+          <p>Corner of Hudson Street and Marine Parade Boulevard</p>
+          <p class="hours">Open Mon to Sat, 8 am to 6 pm. Closed on Sundays.</p>
+          <div class="loc-actions">
+            <a class="btn btn--black" href="tel:+5016151221"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call +501-615-1221</a>
+            <a class="btn btn--line-dark" href="https://maps.app.goo.gl/V4JPb6j85XYL5A1Z7" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-map"/></svg>Get Directions</a>
+          </div>
+        </div>
+      </article>
+      <article class="loc">
+        <div class="loc-photo"><img src="images/location-ladyville.webp" alt="A guest with an iced drink beside the walk-up window at Brew Ladyville" width="720" height="900" loading="lazy"></div>
+        <div class="loc-body">
+          <h3>Ladyville</h3>
+          <p>Unit 3, Teichroeb Building, Mile 10, Philip Goldson Highway</p>
+          <p class="hours">Open Mon to Sat, 8 am to 6 pm. Closed on Sundays.</p>
+          <div class="loc-actions">
+            <!-- TODO: confirm Ladyville number (615-1882 from Instagram bio) -->
+            <a class="btn btn--black" href="tel:+5016151882"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call +501-615-1882</a>
+            <a class="btn btn--line-dark" href="https://maps.app.goo.gl/CqKkyDiTGwze5QpW7" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-map"/></svg>Get Directions</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <!-- REMINDER: the TripAdvisor listing is UNCLAIMED (0 reviews) and missing from TripAdvisor's
+         Belize City cafés list. Claim it and set the category to Café / Coffee & Tea before launch. -->
+    <div class="review-links">
+      <a class="review-link" href="https://www.google.com/maps?cid=4895700875570636023&amp;review=1" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-google"/></svg>Review us on Google</a>
+      <a class="review-link" href="https://www.tripadvisor.com/Restaurant_Review-g291968-d34069537-Reviews-Brew_Coffee_House_at_Paradise_Point-Belize_City_Belize_District.html" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tripadvisor-color"/></svg>Review us on TripAdvisor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM (ticker) ============
+     Placeholder ticker: drink photos + empty post tiles drift slowly left to right.
+     When Elfsight is ready, replace .ticker with the Elfsight embed (or keep the ticker and feed it real posts). -->
+<!-- Instagram section hidden for now: remove the hidden attribute to show it again -->
+<section class="section dark insta" id="instagram" hidden aria-labelledby="ig-title">
+  <div class="wrap head">
+    <span class="label">Instagram</span>
+    <h2 id="ig-title">See what's pouring today</h2>
+  </div>
+  <div class="insta-follow">
+    <a class="btn btn--line" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-instagram"/></svg>Follow @brew.bz</a>
+  </div>
+  <div class="ticker" aria-label="Recent Instagram posts">
+    <div class="ticker-track">
+      <div class="ticker-set"><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-pumpkin-spice.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-apple-chai.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-toasted-marshmallow-matcha.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-pumpchata.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a></div>
+      <div class="ticker-set" aria-hidden="true"><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-pumpkin-spice.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-apple-chai.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-toasted-marshmallow-matcha.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="tick-drink"><img src="images/fall-pumpchata.webp" alt="" loading="lazy"></div></a><a class="tick-item" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" tabindex="-1"><div class="ph" data-label="Instagram post"></div></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / OUR STORY (v4: image left, all text right) ============ -->
+<section class="section dark" id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid about4">
+    <div class="about-photo"><img src="images/about-cup.webp" alt="A Brew Coffee House cup held up with a phone and keys" width="720" height="960" loading="lazy"></div>
+    <div class="about-text">
+      <span class="label">Our Story</span>
+      <h2 id="about-title" class="story-head">Before 2020, a great cup of coffee in Ladyville meant a drive into Belize City.</h2>
+      <p>Brew opened that year to give the community a coffee shop of its own. Our walk-up window was an instant hit with neighbors on their way to work, and the shop soon became a place to stay a while.</p>
+      <p>Our second home at Paradise Point serves locals and visitors staying at nearby hotels like the Radisson Fort George, with the same care in every cup.</p>
+      <p class="sign">Leaving people happier<br>than we found them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============
+     To add an event, copy an <li class="ev-slide"> with a new flyer image (portrait works best).
+     Remove past events by deleting their slide. Arrows and dots appear automatically when there are 2+ slides. -->
+<section class="section light events" id="events" aria-labelledby="events-title">
+  <div class="wrap events-grid">
+    <div class="events-text">
+      <span class="label">Events</span>
+      <h2 id="events-title">What's happening?</h2>
+      <p>We often host pop-up markets and other community events. Follow our Instagram page to stay in the loop.</p>
+      <a class="cta cta--dark" href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener"><span>Follow on Instagram</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="ev-slider" aria-roledescription="carousel" aria-label="Upcoming events">
+      <ul class="ev-track">
+        <!-- Halloween Pop Up Market, October 17. Remove after the event. -->
+        <li class="ev-slide"><div class="ev-frame"><img src="images/event-halloween-popup.webp" alt="Halloween is coming: Brew's Pop Up Market on October 17th, with spooky surprises, wickedly good offers and vendors with treats for everyone." width="688" height="830" loading="lazy"></div></li>
+        <!-- Fall menu promo -->
+        <li class="ev-slide"><div class="ev-frame"><img src="images/event-fall-menu.webp" alt="Now pouring: Brew's fall menu, featuring Seasonal Chai Shake, Pumpkin Spice Latte and Toasted Marshmallow Matcha Latte." width="880" height="1100" loading="lazy"></div></li>
+      </ul>
+      <div class="ev-controls" hidden>
+        <button class="ev-btn" type="button" data-ev="-1" aria-label="Previous event"><svg viewBox="0 0 24 24" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button>
+        <div class="ev-dots" role="group" aria-label="Choose an event"></div>
+        <button class="ev-btn" type="button" data-ev="1" aria-label="Next event"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREERS (angled photo stack) ============
+     Photos are 3:4 portrait WebP in /images (careers-team, careers-guest, careers-smile). -->
+<section class="section careers" id="careers" aria-labelledby="careers-title">
+  <div class="wrap careers-grid">
+    <div class="stack" aria-hidden="true">
+      <div class="snap s1"><img src="images/careers-smile.webp" alt="" width="600" height="800" loading="lazy"></div>
+      <div class="snap s2"><img src="images/careers-team.webp" alt="" width="600" height="800" loading="lazy"></div>
+      <div class="snap s3"><img src="images/careers-guest.webp" alt="" width="600" height="800" loading="lazy"></div>
+    </div>
+    <div class="careers-text">
+      <span class="label">Your craft</span>
+      <h2 id="careers-title">Want to work with us?</h2>
+      <p>We are always on the lookout for Belize's best servers and baristas. DM for details.</p>
+      <div class="actions">
+        <a class="cta" href="https://ig.me/m/brew.bz" target="_blank" rel="noopener"><span>DM us on Instagram</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="careers-email">Or email us at <a href="mailto:brewbelize@gmail.com?subject=Job%20application">brewbelize@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (v4) ============ -->
+<footer class="f4">
+  <div class="wrap f4-grid">
+    <div class="f4-brand">
+      <a class="f4-logo" href="#top" aria-label="Brew Coffee House, back to top"><svg viewBox="0 0 580.08 276.17" aria-hidden="true"><use href="#brew-logo"/></svg></a>
+      <p class="f4-tag">Leaving people happier<br>than we found them.</p>
+      <div class="f4-social">
+        <a href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a href="https://www.facebook.com/brewcoffeebz/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+        <a href="https://www.tiktok.com/@brewcoffeebz" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g291968-d34069537-Reviews-Brew_Coffee_House_at_Paradise_Point-Belize_City_Belize_District.html" target="_blank" rel="noopener" aria-label="TripAdvisor"><svg aria-hidden="true"><use href="#i-tripadvisor"/></svg></a>
+      </div>
+    </div>
+    <address class="f4-loc">
+      <strong>Belize City</strong>
+      <span>Paradise Point</span>
+      <span>Corner Hudson Street, Marine Parade</span>
+      <span>Mon to Sat, 8AM to 6PM</span>
+      <a href="tel:+5016151221">+501-615-1221</a>
+      <a class="f4-dir" href="https://maps.app.goo.gl/V4JPb6j85XYL5A1Z7" target="_blank" rel="noopener">Get Directions</a>
+    </address>
+    <address class="f4-loc">
+      <strong>Ladyville</strong>
+      <span>Teichroeb Building</span>
+      <span>Mile 10, Philip Goldson Highway</span>
+      <span>Mon to Sat, 8AM to 6PM</span>
+      <!-- TODO: confirm Ladyville number -->
+      <a href="tel:+5016151882">+501-615-1882</a>
+      <a class="f4-dir" href="https://maps.app.goo.gl/CqKkyDiTGwze5QpW7" target="_blank" rel="noopener">Get Directions</a>
+    </address>
+  </div>
+  <div class="wrap"><p class="f4-base">© <span id="year">2026</span> Brew Coffee House, Belize</p></div>
+</footer>
+
+<!-- ============ CONTACT POP-UP ============ -->
+<dialog class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+    <div class="contact-head">
+      <h2 id="contact-title">Get in touch</h2>
+      <button class="close-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="contact-loc">
+      <h3>Paradise Point</h3>
+      <div class="row">
+        <a class="btn btn--white" href="tel:+5016151221"><svg aria-hidden="true"><use href="#i-phone"/></svg>+501-615-1221</a>
+        <a class="btn btn--line" href="https://wa.me/5016151221" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+      </div>
+    </div>
+    <div class="contact-loc">
+      <h3>Ladyville</h3>
+      <div class="row">
+        <a class="btn btn--white" href="tel:+5016151882"><svg aria-hidden="true"><use href="#i-phone"/></svg>+501-615-1882</a>
+        <!-- TODO: if the Ladyville number is on WhatsApp, add: <a class="btn btn--line" href="https://wa.me/5016151882">WhatsApp</a> -->
+      </div>
+    </div>
+    <div class="contact-other">
+      <a class="email" href="mailto:brewbelize@gmail.com">brewbelize@gmail.com</a>
+      <div class="socials">
+        <a href="https://www.instagram.com/brew.bz/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a href="https://www.facebook.com/brewcoffeebz/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+        <a href="https://www.tiktok.com/@brewcoffeebz" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g291968-d34069537-Reviews-Brew_Coffee_House_at_Paradise_Point-Belize_City_Belize_District.html" target="_blank" rel="noopener" aria-label="TripAdvisor"><svg aria-hidden="true"><use href="#i-tripadvisor"/></svg></a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ MENU LIGHTBOX ============ -->
+<dialog class="lightbox" id="lightbox" aria-label="Menu viewer">
+  <div class="lb-inner">
+    <div class="lb-top">
+      <span id="lb-title">Drinks · 1 of 2</span>
+      <button class="lb-btn lb-close" type="button" data-close aria-label="Close menu viewer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="lb-stage" id="lb-stage"></div>
+    <div class="lb-nav">
+      <button class="lb-btn" type="button" data-step="-1" aria-label="Previous menu"><svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button>
+      <button class="lb-btn" type="button" data-step="1" aria-label="Next menu"><svg><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+
+  /* v4 header menu (dropdown on all screen sizes) */
+  var menuBtn=$('.menu-btn'), panel=$('#menu-panel');
+  function setNav(open){panel.hidden=!open;menuBtn.setAttribute('aria-expanded',open)}
+  menuBtn.addEventListener('click',function(e){e.stopPropagation();setNav(panel.hidden)});
+  document.addEventListener('click',function(e){if(!panel.hidden&&!panel.contains(e.target))setNav(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden){setNav(false);menuBtn.focus()}});
+  $$('a',panel).forEach(function(a){a.addEventListener('click',function(){setNav(false)})});
+
+  /* Testimonial slider: auto-advances every 6s, pauses on hover/focus, no autoplay if reduced motion */
+  (function(){
+    var qs=$$('.quote'), dots=$('.quotes-dots'), box=$('.quotes'), i=0, timer=null;
+    if(!qs.length)return;
+    function show(n){i=(n+qs.length)%qs.length;qs.forEach(function(q,k){q.classList.toggle('is-active',k===i);q.setAttribute('aria-hidden',k!==i)});[].forEach.call(dots.children,function(d,k){d.setAttribute('aria-current',k===i)})}
+    qs.forEach(function(q,k){var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Show review '+(k+1));d.addEventListener('click',function(){show(k);restart()});dots.appendChild(d)});
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function start(){if(!reduce)timer=setInterval(function(){show(i+1)},6000)}
+    function stop(){clearInterval(timer)}
+    function restart(){stop();start()}
+    box.addEventListener('mouseenter',stop);box.addEventListener('mouseleave',start);
+    box.addEventListener('focusin',stop);box.addEventListener('focusout',start);
+    show(0);start();
+  })();
+
+    /* Careers photos drop in when scrolled into view */
+  (function(){
+    var st=$('.stack'); if(!st)return;
+    if(!('IntersectionObserver' in window)){st.classList.add('is-in');return}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){st.classList.add('is-in');io.disconnect()}})},{threshold:.3});
+    io.observe(st);
+  })();
+
+  
+/* Nav text flips dark when it sits over a light section */
+  (function(){
+    var hdr=$('#site-header'), lights=$$('.light');
+    function check(){var y=hdr.offsetHeight/2, on=false;lights.forEach(function(s){var r=s.getBoundingClientRect();if(r.top<=y&&r.bottom>=y)on=true});hdr.classList.toggle('on-light',on)}
+    var t;window.addEventListener('scroll',function(){requestAnimationFrame(check);clearTimeout(t);t=setTimeout(check,120)},{passive:true});
+    window.addEventListener('resize',check);check();
+  })();
+
+  
+/* Events slider (controls only show with 2+ events) */
+  (function(){
+    var root=$('.ev-slider'); if(!root)return;
+    var track=$('.ev-track',root), slides=$$('.ev-slide',root), ctr=$('.ev-controls',root), dots=$('.ev-dots',root), i=0;
+    if(slides.length<2)return;
+    ctr.hidden=false;
+    slides.forEach(function(s,k){var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Show event '+(k+1));d.addEventListener('click',function(){go(k)});dots.appendChild(d)});
+    function go(n){i=(n+slides.length)%slides.length;track.scrollTo({left:i*track.clientWidth,behavior:'smooth'});sync()}
+    function sync(){[].forEach.call(dots.children,function(d,k){d.setAttribute('aria-current',k===i)})}
+    track.addEventListener('scroll',function(){var w=track.clientWidth;i=Math.round(track.scrollLeft/w);sync()},{passive:true});
+    $$('[data-ev]',root).forEach(function(b){b.addEventListener('click',function(){go(i+Number(b.dataset.ev))})});
+    sync();
+  })();
+
+  
+/* Dialogs */
+  $$('dialog').forEach(function(d){
+    $$('[data-close]',d).forEach(function(b){b.addEventListener('click',function(){d.close()})});
+    d.addEventListener('click',function(e){if(e.target===d)d.close()});
+  });
+  var contact=$('#contact');
+  $$('[data-open-contact]').forEach(function(b){b.addEventListener('click',function(){setNav(false);contact.showModal()})});
+
+  /* Fall slider */
+  var track=$('.slides'), slides=$$('.slide',track), bar=$('.progress i');
+  function current(){var x=track.scrollLeft,best=0,dist=1e9;slides.forEach(function(s,i){var d=Math.abs(s.offsetLeft-slides[0].offsetLeft-x);if(d<dist){dist=d;best=i}});return best}
+  function go(i){i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:slides[i].offsetLeft-slides[0].offsetLeft,behavior:'smooth'})}
+  function sync(){var max=track.scrollWidth-track.clientWidth,f=max>0?track.scrollLeft/max:0,w=Math.max(18,100/slides.length);bar.style.width=w+'%';bar.style.left=(f*(100-w))+'%'}
+  slides.forEach(function(s,i){s.setAttribute('aria-roledescription','slide');s.setAttribute('aria-label',(i+1)+' of '+slides.length)});
+  track.addEventListener('scroll',function(){requestAnimationFrame(sync)},{passive:true});
+  $$('.slider-controls [data-dir]').forEach(function(b){b.addEventListener('click',function(){go(current()+Number(b.dataset.dir))})});
+  sync();
+
+  /* Menu lightbox */
+  var boards=$$('[data-lightbox]'), lb=$('#lightbox'), stage=$('#lb-stage'), title=$('#lb-title'), idx=0;
+  function show(i){
+    idx=(i+boards.length)%boards.length;
+    stage.replaceChildren($('.frame',boards[idx]).firstElementChild.cloneNode(true));
+    title.textContent=$('.cap',boards[idx]).textContent+' · '+(idx+1)+' of '+boards.length;
+  }
+  boards.forEach(function(b,i){b.addEventListener('click',function(){show(i);lb.showModal()})});
+  $$('[data-step]',lb).forEach(function(b){b.addEventListener('click',function(){show(idx+Number(b.dataset.step))})});
+  lb.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){e.preventDefault();show(idx+1)}
+    if(e.key==='ArrowLeft'){e.preventDefault();show(idx-1)}
+  });
+  var sx=null;
+  stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  stage.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(idx+(dx<0?1:-1));sx=null});
+
+  $('#year').textContent=new Date().getFullYear();
+})();
+
+  /* Hero photo rotation (right side) */
+  (function(){
+    var box=document.querySelector('.h4-rotator'); if(!box)return;
+    var imgs=[].slice.call(box.querySelectorAll('img')), i=0;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||imgs.length<2)return;
+    window.addEventListener('load',function(){
+      imgs.forEach(function(im){if(im.dataset.src){im.src=im.dataset.src;im.removeAttribute('data-src')}});
+      setInterval(function(){
+        if(document.hidden)return;
+        imgs[i].classList.remove('is-on'); i=(i+1)%imgs.length; imgs[i].classList.add('is-on');
+      },7000);
+    });
+  })();
+</script>
+<script src="js/brew-latte-3d.js" defer></script>
+</body>
+</html>
