@@ -56,6 +56,10 @@
 
     // Rendering
     maxPixelRatio: 2,
+    // Maker's mark on the underside of the saucer (visible when the cup is turned over)
+    bottomMark: true,         // show the Brew Coffee House logo under the saucer
+    bottomMarkColor: '#2e2b29', // ink colour of the stamp
+    bottomMarkWidth: 0.64,    // logo width in model units (the saucer's flat foot is 0.80 across)
     overscan: 0.28,           // canvas extends this far past the container on each side so tilts/rolls never clip
     cameraFovDeg: 30,
     cameraElevationDeg: 38,
@@ -63,6 +67,10 @@
     target: [0, 0.30, 0],
     pivot: [0, 0.55, 0]       // rotation centre: on the cup's vertical axis, mid-height of the assembly
   };
+
+  // Brew Coffee House logo artwork (from brew_logo.svg), used for the stamp under the saucer
+  var LOGO_VIEWBOX = '0 0 580.08 276.17';
+  var LOGO_PATHS = '<g > <g> <path d="M579.86,228.78H0S.05.01.05.01h579.8s.01,228.77.01,228.77ZM573.72,222.8V5.89s-567.62,0-567.62,0l.09,216.92h567.53Z"/> <path d="M417.24,248.78c7.38,1.92,11.12,9.09,10.04,15.63-1.15,6.95-7.26,11.62-14.33,11.71-9.24.12-15.78-6.72-15.09-15.17.76-9.28,9.59-14.72,19.38-12.17ZM409.87,254.02c-5.36,1.88-6.48,7.41-5.02,11.23,1.75,4.58,6.47,6.27,10.36,5.07,4.92-1.52,6.72-6.58,5.41-11.03-1.22-4.15-5.82-7-10.75-5.27Z"/> <path d="M68.39,276.11c-8.56-.03-14.77-6.2-14.81-14.01s6.63-14.17,15.15-14.03,14.47,6.18,14.47,14.02c0,7.78-6.33,14.05-14.82,14.02ZM64.97,254.25c-4.98,2.2-5.98,8-4.08,11.83,2.06,4.15,6.81,5.68,10.94,3.91,4.35-1.87,5.92-7,4.33-11.24-1.57-4.18-6.31-6.67-11.19-4.5Z"/> <polygon points="369.14 275.37 362.81 275.63 362.85 264.51 350.66 264.53 350.68 275.62 344.2 275.55 344.26 248.87 350.71 248.54 350.67 259.35 362.8 259.2 362.81 248.6 369.1 248.66 369.14 275.37"/> <path d="M474.3,248.87l6.39-.24-.23,16.72c-.09,6.41-5.2,10.33-11,10.77-7.4.57-13.36-3.99-13.39-11.62l-.06-15.89,6.43-.02.09,17.26c.01,2.77,3.51,4.94,5.82,4.89,3.29-.07,5.9-2.49,5.91-5.99l.05-15.88Z"/> <polygon points="277.96 264.46 265.61 264.39 265.74 270.61 279.88 270.57 280.47 275.56 259.25 275.6 259.25 248.59 279.66 248.59 279.8 253.59 265.72 253.57 265.71 259.48 278.11 259.41 277.96 264.46"/> <polygon points="578.27 264.27 565.64 264.44 565.74 270.59 580.08 270.62 579.96 275.57 559.24 275.6 559.2 248.6 579.68 248.58 579.79 253.61 565.69 253.6 565.73 259.45 578.05 259.45 578.27 264.27"/> <path d="M228.39,264.27l-12.78.16.11,6.16h14.37s-.1,5-.1,5h-20.78s.04-27,.04-27h20.51s.05,5.02.05,5.02l-14.16.02.22,5.82h10.93c.69,0,1.24,2.15,1.6,4.83Z"/> <path d="M525.37,275.13c-5.6,1.71-11.18.97-16.64-1.65l1.62-4.94c8.93,4.36,15.42,1.75,14.39-.47-.29-.63-1.62-2.04-2.3-2.24l-8.49-2.5c-2.62-.77-5.03-4.04-5.05-6.2-.03-3.28,1.71-6.46,4.78-7.67,5.63-2.21,11.66-1.76,16.19,1.38l-1.98,3.54c-.83,1.48-10.69-5.18-13.15,2.96l9.29,3.06c3.55,1.17,6.77,3.31,6.91,6.7s-2,6.93-5.58,8.03Z"/> <path d="M22.7,267.4l4.37,3.93c-3.03,2.86-6.11,4.38-9.87,4.73-8.87.82-15.81-5.46-16.09-13.3-.33-8.9,6.83-15.29,15.82-14.62,4,.29,7,1.77,10.08,4.66l-4.12,3.87c-3.97-4.05-9.04-4.11-12.62-1.05-3.58,3.05-3.78,9.13-.46,12.44s8.63,4.04,12.89-.66Z"/> <polygon points="130.56 260.71 130.71 265.78 118.09 265.77 118.08 275.58 111.82 275.49 111.81 248.58 132.08 248.59 132.03 253.62 118.13 253.58 118.1 260.7 130.56 260.71"/> <polygon points="178.99 260.68 179.29 265.8 166.85 265.76 166.82 275.61 160.54 275.46 160.56 248.59 180.87 248.58 180.94 253.63 166.85 253.58 166.89 260.74 178.99 260.68"/> <path d="M541.46,190.59H38.46s-.04-152.47-.04-152.47l503.04.02v152.45ZM117.42,113.4c6.82-3.52,9.9-9.47,9.89-16.31-.01-6.51-3.59-11.89-9.75-15.38-4.82-1.81-10.27-3.37-15.65-3.37h-38.08s-.02,73.27-.02,73.27l41.09-.08c6.11-.01,12.24-1.89,17.55-4.22,6.7-4.46,9.35-11.02,8.3-18.96-.88-6.67-5.31-12.21-13.34-14.95ZM248.88,151.55l-16.42-23.64c10.18-4.18,15.17-13.11,15.14-23.28-.03-10.05-5.12-18.24-14.09-22.87-5.09-1.88-10.92-3.44-16.6-3.44l-32.85.03v73.21s16.91.03,16.91.03l.13-20.49,15.71.14,13.8,20.25,18.26.06ZM351.96,120.95l-.06-13.16-34.03.04v-15.95s38.69-.06,38.69-.06l-.09-13.51h-55.41s-.01,73.27-.01,73.27h56.73s-.14-13.64-.14-13.64l-39.74.07-.07-17.04,34.12-.03ZM506,78.57l-16.89,51.44-16.88-51.68-15.61.02-17.31,51.39-16.54-51.35h-17.51s24.06,73.29,24.06,73.29l18.06-.2,16.65-49.38,16.13,49.46,18.23-.05,23.87-73.03-16.26.1Z"/> <path d="M105.2,138.48l-24.53.4.04-18.31,24.69.44c4.98.09,8.31,4.23,8.58,8.12.31,4.43-3.03,9.25-8.78,9.35Z"/> <path d="M102.54,107.89l-21.82.55-.04-17.51,21.16.42c4.72.09,8.21,3.95,8.47,7.72.27,3.95-2.43,8.68-7.77,8.82Z"/> <path d="M219.08,117.26l-18.07.48.02-25.73,16.79.29c7.36.13,12.32,5.19,12.64,11.97.29,6.18-3.34,12.77-11.38,12.99Z"/> </g> </g>';
 
   /* ───────────────────────────── math helpers (column-major) ───────────────────────────── */
   function perspective(fovy, aspect, n, f) {
@@ -128,7 +136,7 @@
 
   var FS = '#version 300 es\nprecision highp float;\n' +
     'in vec3 vW; in vec3 vN; in vec2 vUV; in vec3 vM;\n' +
-    'uniform vec3 uCam; uniform sampler2D uTex; uniform int uKind; uniform vec3 uBase;\n' +
+    'uniform vec3 uCam; uniform sampler2D uTex; uniform sampler2D uMark; uniform int uKind; uniform vec3 uBase;\n' +
     'out vec4 o;\n' +
     'vec3 toLin(vec3 c){return pow(c,vec3(2.2));}\n' +
     'void main(){\n' +
@@ -159,6 +167,7 @@
     '    col=mix(col,env*ao,F*0.75);\n' +
     '  }\n' +
     '  col=vec3(1.0)-exp(-col*1.15);\n' +    // gentle filmic rolloff
+    '  if(uKind==3){ float a=texture(uMark,vUV).a*0.92; o=vec4(pow(col,vec3(1.0/2.2))*a,a); return; }\n' +   // stamp: premultiplied, blended over the saucer
     '  o=vec4(pow(col,vec3(1.0/2.2)),1.0);\n' +
     '}';
 
@@ -259,6 +268,7 @@
     if (!gl) { canvas.remove(); el.classList.add('latte3d--failed'); return { destroy: function () {} }; }
 
     var prog, sprog, meshes = [], shadowVAO, shadowBuf, tex, viewProj, camPos, disposed = false;
+    var mark = null; // { vao, bufs, count, tex, ready }
     var raf = 0, last = 0, visible = true, pageVisible = !document.hidden, needsFrame = true;
     var camRight = [1, 0, 0], camBack = [0, 0, 1], UP = [0, 1, 0];
 
@@ -306,7 +316,43 @@
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
       var la = gl.getAttribLocation(sprog, 'aP'); gl.enableVertexAttribArray(la); gl.vertexAttribPointer(la, 2, gl.FLOAT, false, 0, 0);
       gl.bindVertexArray(null);
+      if (S.bottomMark) setupMark(locP, locN, locU);
     }
+    function setupMark(locP, locN, locU) {
+      // A thin disc just under the saucer's flat foot (foot plane y = 0.075), facing down, textured with the logo.
+      var half = S.bottomMarkWidth / 2, y = 0.0742;
+      var pos = new Float32Array([-half, y, -half,  half, y, -half,  half, y, half,  -half, y, half]);
+      var nor = new Float32Array([0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0]);
+      // UVs chosen so the logo reads correctly (not mirrored) when viewed from underneath, upright relative to the handle
+      var uv = new Float32Array([0, 1, 1, 1, 1, 0, 0, 0]);
+      var idx = new Uint16Array([0, 2, 1, 0, 3, 2]);
+      var vao = gl.createVertexArray(); gl.bindVertexArray(vao); var bufs = [];
+      [[locP, pos, 3], [locN, nor, 3], [locU, uv, 2]].forEach(function (a) {
+        if (a[0] < 0) return;
+        var b = gl.createBuffer(); bufs.push(b); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, a[1], gl.STATIC_DRAW);
+        gl.enableVertexAttribArray(a[0]); gl.vertexAttribPointer(a[0], a[2], gl.FLOAT, false, 0, 0);
+      });
+      var ib = gl.createBuffer(); bufs.push(ib); gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ib); gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, idx, gl.STATIC_DRAW);
+      gl.bindVertexArray(null);
+      mark = { vao: vao, bufs: bufs, count: 6, tex: null, ready: false };
+      // Rasterise the logo (a square canvas; the logo is centred and fills the width, with its true proportions)
+      var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="' + LOGO_VIEWBOX + '" fill="#000">' + LOGO_PATHS + '</svg>';
+      var img = new Image();
+      img.onload = function () {
+        if (disposed || !mark) return;
+        var N = 1024, c = document.createElement('canvas'); c.width = c.height = N;
+        var g = c.getContext('2d'), vb = LOGO_VIEWBOX.split(' ').map(Number), w = N * 0.96, h = w * vb[3] / vb[2];
+        g.drawImage(img, (N - w) / 2, (N - h) / 2, w, h);
+        mark.tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, mark.tex);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, c);
+        gl.generateMipmap(gl.TEXTURE_2D);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        mark.ready = true; wake();
+      };
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    }
+    function hexRGB(h) { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255]; }
     function uploadTexture(bitmap) {
       tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, bitmap);
@@ -354,6 +400,16 @@
         gl.bindVertexArray(m.vao); gl.drawElements(gl.TRIANGLES, m.count, m.type, 0);
       });
       gl.bindVertexArray(null);
+      if (mark && mark.ready) {
+        // printed stamp: blended on top of the saucer's underside, pulled slightly toward the camera so it never z-fights
+        gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+        gl.enable(gl.POLYGON_OFFSET_FILL); gl.polygonOffset(-2, -2); gl.depthMask(false);
+        gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, mark.tex); gl.uniform1i(gl.getUniformLocation(prog, 'uMark'), 1);
+        gl.uniform1i(uKind, 3); gl.uniform3fv(uBase, hexRGB(S.bottomMarkColor));
+        gl.bindVertexArray(mark.vao); gl.drawElements(gl.TRIANGLES, mark.count, gl.UNSIGNED_SHORT, 0);
+        gl.bindVertexArray(null);
+        gl.depthMask(true); gl.disable(gl.POLYGON_OFFSET_FILL); gl.disable(gl.BLEND); gl.activeTexture(gl.TEXTURE0);
+      }
     }
 
     /* ── physics ── */
@@ -538,6 +594,7 @@
       el.removeEventListener('lostpointercapture', onCancel); el.removeEventListener('pointerleave', onLeave);
       meshes.forEach(function (m) { m.bufs.forEach(function (b) { gl.deleteBuffer(b); }); gl.deleteVertexArray(m.vao); });
       if (shadowBuf) gl.deleteBuffer(shadowBuf); if (shadowVAO) gl.deleteVertexArray(shadowVAO);
+      if (mark) { mark.bufs.forEach(function (b) { gl.deleteBuffer(b); }); gl.deleteVertexArray(mark.vao); if (mark.tex) gl.deleteTexture(mark.tex); mark = null; }
       if (tex) gl.deleteTexture(tex); if (prog) gl.deleteProgram(prog); if (sprog) gl.deleteProgram(sprog);
       var lose = gl.getExtension('WEBGL_lose_context'); if (lose) lose.loseContext();
       canvas.remove();
